@@ -1,0 +1,164 @@
+openapi: "3.0.0"
+info:
+  description: Geolocation Service API
+  version: 1.0.0
+  title: Geolocation Service API
+
+servers:
+  - url: 'http://localhost:8080/geolocation/v1.0'
+
+components:
+  schemas:
+    GeolocationData:
+      type: object
+      properties:
+        ip:
+          type: string
+          description: IPv4 address
+        host:
+          type: string
+        latitude:
+          type: number
+          description: Geolocation latitude
+        longitude:
+          type: number
+          description: Geolocation longitude
+
+paths:
+  /ip/{ip}:
+    get:
+      tags:
+        - ip
+      operationId: getGeolocationByIP
+      parameters:
+        - in: path
+          name: ip
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeolocationData'
+        '404':
+          description: not found
+        '422':
+          description: unprocesable entity
+        '503':
+          description: service unavailable
+
+    post:
+      tags:
+        - ip
+      operationId: createGeolocationByIP
+      parameters:
+        - in: path
+          name: ip
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeolocationData'
+        '404':
+          description: not found
+        '422':
+          description: unprocesable entity
+        '503':
+          description: service unavailable
+
+    delete:
+      tags:
+        - ip
+      operationId: deleteGeolocationByIP
+      parameters:
+        - in: path
+          name: ip
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: no content
+        '404':
+          description: not found
+        '422':
+          description: unprocesable entity
+        '503':
+          description: service unavailable
+
+  /url/{url}:
+    get:
+      tags:
+        - url
+      operationId: getGeolocationByUrl
+      parameters:
+        - in: path
+          name: url
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeolocationData'
+        '404':
+          description: not found
+        '422':
+          description: unprocesable entity
+        '503':
+          description: service unavailable
+
+    post:
+      tags:
+        - url
+      operationId: createGeolocationByUrl
+      parameters:
+        - in: path
+          name: url
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeolocationData'
+        '404':
+          description: not found
+        '422':
+          description: unprocesable entity
+        '503':
+          description: service unavailable
+
+    delete:
+      tags:
+        - url
+      operationId: deleteGeolocationByUrl
+      parameters:
+        - in: path
+          name: url
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: no content
+        '404':
+          description: not found
+        '422':
+          description: unprocesable entity
+        '503':
+          description: service unavailable

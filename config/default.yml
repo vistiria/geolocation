@@ -1,0 +1,2 @@
+api_access_key: <%= ENV.fetch('API_ACCESS_KEY') %>
+ipstack_url: 'http://api.ipstack.com/'
