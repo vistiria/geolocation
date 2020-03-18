@@ -25,7 +25,7 @@ sudo systemctl status mongod
 Clone repositiry and set the project to be up and running
 ```
 # clone repository
-git clone https://github.com/iresine/geolocation
+git clone https://github.com/vistiria/geolocation
 cd geolocation/
 
 # make sure you have ruby-2.6.3 ruby version
