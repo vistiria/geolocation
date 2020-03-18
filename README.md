@@ -2,7 +2,7 @@ Geolocation API
 =============
 ##### Version: v1.0
 
-Simple API to store geolocation data.
+Simple API to store geolocation data.  
 Based on IPv4 or url, you can get, post and delete geolocation data.
 
 Prerequests
@@ -17,7 +17,7 @@ Install MongoDB, you can use documentation:
 
 https://docs.mongodb.com/manual/installation/
 
-make sure that the mongod process is running
+Make sure that the mongod process is running  
 e.g. for systemctl
 ```
 sudo systemctl status mongod
@@ -46,8 +46,8 @@ export API_ACCESS_KEY=<Your ipstack API Access Key>
 
 API endpoints
 ----------------
-swagger API endpoints documentation:
-swagger/geolocation.yaml
+swagger API endpoints documentation:  
+swagger/geolocation.yaml  
 you can open this file in online editor: https://editor.swagger.io/
 
 Example of curl commands
